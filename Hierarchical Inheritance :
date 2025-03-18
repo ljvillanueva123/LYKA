@@ -1,0 +1,37 @@
+
+class EsportsEvent:
+    def __init__(self, event_date):
+        self.event_date = event_date
+
+    def scheduleMatch(self):
+        print(f"Match scheduled for {self.event_date}.")
+
+
+class StudentDivision(EsportsEvent):
+    def __init__(self, event_date, division_name):
+        super().__init__(event_date)  
+        self.division_name = division_name
+
+    def registerTeam(self, team_name):
+        print(f"Team {team_name} registered in the {self.division_name} division for the event.")
+
+
+class FacultyDivision(EsportsEvent):
+    def __init__(self, event_date, division_name):
+        super().__init__(event_date)  
+        self.division_name = division_name
+
+    def assignReferee(self, referee_name):
+        print(f"Referee {referee_name} assigned to the {self.division_name} division for the event.")
+
+
+event = EsportsEvent("2025-04-10")
+event.scheduleMatch()
+
+
+student_division = StudentDivision("2025-04-10", "Student")
+faculty_division = FacultyDivision("2025-04-10", "Faculty")
+
+
+student_division.registerTeam("Code Warriors")
+faculty_division.assignReferee("Mr. Smith")
