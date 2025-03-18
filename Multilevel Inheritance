@@ -1,0 +1,37 @@
+
+class Educator:
+    def __init__(self, name):
+        self.name = name
+
+    def prepareLesson(self):
+        print(f"{self.name} is preparing a general lesson.")
+
+
+class ITInstructor(Educator):
+    def __init__(self, name):
+        super().__init__(name)
+
+    def prepareLesson(self):
+        print(f"{self.name} is preparing a lesson with technical content on coding.")
+
+    def teachCoding(self):
+        print(f"{self.name} is teaching coding concepts and programming.")
+
+
+class DatabaseInstructor(ITInstructor):
+    def __init__(self, name):
+        super().__init__(name)
+
+    def teachCoding(self):
+        
+        print(f"{self.name} is teaching coding with integration of SQL and Python.")
+
+    def demonstrateMySQL(self):
+        print(f"{self.name} is demonstrating MySQL queries and how to use it with Python.")
+
+instructor = DatabaseInstructor("Dr. John")
+
+
+instructor.prepareLesson()   
+instructor.teachCoding()     
+instructor.demonstrateMySQL()  
